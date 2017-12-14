@@ -1,1 +1,1 @@
-web: bundle exec ruby manyabot.rb -p $PORT
+web: bundle exec ruby manyabot.rb
