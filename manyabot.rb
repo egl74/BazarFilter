@@ -10,8 +10,7 @@ class Validator
 	def validateMessage(message)
 		WORDSTOFILTER.each do |word|
 			if Unicode::downcase(message).include? word
-			#if message and message.downcase.include? word
-			return false
+				return false
 			end
 		end
 		return true
