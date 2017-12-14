@@ -1,4 +1,4 @@
-#require 'unicode'
+require 'unicode'
 require 'telegram/bot'
 
 token = '435455268:AAEyJrD-S1TeX5yIAzJEmzdUDoYskcHTfes'
@@ -10,7 +10,7 @@ class Validator
 	def validateMessage(message)
 		WORDSTOFILTER.each do |word|
 			#if Unicode::downcase(message).include? word
-			if message.downcase.include? word
+			if message and message.downcase.include? word
 			return false
 			end
 		end
