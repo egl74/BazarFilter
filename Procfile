@@ -1,1 +1,1 @@
-worker: bundle exec ruby manyabot.rb 
+web: bundle exec ruby manyabot.rb -p $PORT
