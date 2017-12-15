@@ -1,11 +1,12 @@
 require 'telegram/bot'
 
-WORDSTOFILTER = ["маня", "мань"]
+MANYAFILTER = ["маня", "мань"]
+VYNOSITE = ["выносите"]
 
 class Validator
 
-	def validateMessage(message)
-		WORDSTOFILTER.each do |word|
+	def validateMessage(message, filterList)
+		filterList.each do |word|
 			# TODO: replace with solid downcase
 			message = removeRepetitiveSymbols(message)
 			if message.downcase.include? word
@@ -21,9 +22,15 @@ class Validator
 end
 
 Telegram::Bot::Client.run(ENV["TOKEN"]) do |bot|
+  validator = Validator.new
   bot.listen do |message|
-  	unless message.nil? or message.text.nil? or Validator.new.validateMessage(message.text)
-  		bot.api.send_message(chat_id: message.chat.id, text: "#{message.from.first_name} не манька, он #нетакойкаквсе!")
-  	end
+		unless message.nil? or message.text.nil? then
+      	unless validator.validateMessage(message.text, MANYAFILTER)
+  				bot.api.send_message(chat_id: message.chat.id, text: "#{message.from.first_name} остынь, он не манька, он #нетакойкаквсе!!")
+        end
+      	unless validator.validateMessage(message.text, VYNOSITE)
+					bot.api.send_message(chat_id: message.chat.id, text: "https://i.imgur.com/ERaRFiD.jpg")
+        end
+    end
   end
 end
