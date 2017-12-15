@@ -29,7 +29,7 @@ Telegram::Bot::Client.run(ENV["TOKEN"]) do |bot|
   				bot.api.send_message(chat_id: message.chat.id, text: "#{message.from.first_name} остынь, он не манька, он #нетакойкаквсе!!")
         end
       	unless validator.validateMessage(message.text, VYNOSITE)
-					bot.api.send_message(chat_id: message.chat.id, text: "https://i.imgur.com/ERaRFiD.jpg")
+					bot.api.send_photo(chat_id: message.chat.id, photo: "https://i.imgur.com/ERaRFiD.jpg", disable_notification: true)
         end
     end
   end
