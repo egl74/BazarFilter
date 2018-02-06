@@ -1,1 +1,1 @@
-worker: bundle exec ruby manyabot.rb
+worker: bundle exec ruby.rb
