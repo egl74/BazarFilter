@@ -90,7 +90,7 @@ class StockWatcher
   end
 end
 
-Telegram::Bot::Client.run(ENV"TOKEN") do |bot|
+Telegram::Bot::Client.run(ENV["TOKEN"]) do |bot|
   validator = Validator.new
   replyComposer = ReplyComposer.new
   stockWatcher = StockWatcher.new
