@@ -18,7 +18,7 @@ class StockWatcher
       doc = Nokogiri::HTML(open(url))
       sleep(1)
       doc.xpath('//*[@id="last_last"]/text()').each do |q|
-        quote = "#{q}$"
+        quote = "`#{q}`$"
       end
       doc.xpath('//*[@id="quotes_summary_current_data"]/div[1]/div[2]/div[1]/span[2]').each do |d|
         diff = diff.concat(d)
@@ -35,6 +35,6 @@ class StockWatcher
   end
 
   def composeReply(symbol, quote, diff)
-    return "#{Unicode::upcase(symbol)}: `#{quote}` #{diff}"
+    return "#{Unicode::upcase(symbol)}: #{quote} #{diff}"
   end
 end
