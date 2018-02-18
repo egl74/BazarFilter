@@ -7,7 +7,7 @@ class StockWatcher
   def getQuote(text)
     atIndex = text.index('@')
     symbolEndIndex = atIndex.nil? ? text.length : atIndex - 1
-    return stockWatcher.fetchQuote(text[1..symbolEndIndex])
+    return fetchQuote(text[1..symbolEndIndex])
   end
 
   def fetchQuote(symbol)
@@ -35,6 +35,6 @@ class StockWatcher
   end
 
   def composeReply(symbol, quote, diff)
-    return "#{Unicode::upcase(symbol)}: #{quote} #{diff}"
+    return "#{Unicode::upcase(symbol)}: `#{quote}` #{diff}"
   end
 end

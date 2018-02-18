@@ -1,8 +1,6 @@
 GEM
   remote: https://rubygems.org/
   specs:
-    addressable (2.5.2)
-      public_suffix (>= 2.0.2, < 4.0)
     axiom-types (0.1.1)
       descendants_tracker (~> 0.0.4)
       ice_nine (~> 0.11.0)
@@ -11,20 +9,9 @@ GEM
       descendants_tracker (~> 0.0.1)
     descendants_tracker (0.0.4)
       thread_safe (~> 0.3, >= 0.3.1)
-    domain_name (0.5.20170404)
-      unf (>= 0.0.5, < 1.0.0)
     equalizer (0.0.11)
     faraday (0.13.1)
       multipart-post (>= 1.2, < 3)
-    http (3.0.0)
-      addressable (~> 2.3)
-      http-cookie (~> 1.0)
-      http-form_data (>= 2.0.0.pre.pre2, < 3)
-      http_parser.rb (~> 0.6.0)
-    http-cookie (1.0.3)
-      domain_name (~> 0.5)
-    http-form_data (2.0.0)
-    http_parser.rb (0.6.0)
     ice_nine (0.11.2)
     inflecto (0.0.2)
     json (2.1.0)
@@ -32,15 +19,11 @@ GEM
     multipart-post (2.0.0)
     nokogiri (1.8.2)
       mini_portile2 (~> 2.3.0)
-    public_suffix (3.0.1)
     telegram-bot-ruby (0.8.6.1)
       faraday
       inflecto
       virtus
     thread_safe (0.3.6)
-    unf (0.1.4)
-      unf_ext
-    unf_ext (0.0.7.5)
     unicode (0.4.4.4)
     virtus (1.0.5)
       axiom-types (~> 0.1)
@@ -52,7 +35,6 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  http
   json
   nokogiri
   telegram-bot-ruby (= 0.8.6.1)

@@ -25,6 +25,6 @@ class ReplyComposer
   end
 
   def sendText(bot, chatId, messageText)
-    bot.api.send_message(chat_id: chatId, text: messageText)
+    bot.api.send_message(chat_id: chatId, text: messageText, parse_mode: "Markdown")
   end
 end

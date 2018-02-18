@@ -17,7 +17,7 @@ Telegram::Bot::Client.run(ENV["TOKEN"]) do |bot|
     unless message.nil? or message.text.nil? or message.text.empty? then
       text = message.text
       chatId = message.chat.id
-      validator.handleMessage(text, QUOTES, Proc.new { replyComposer.sendText(stockWatcher.getQuote(text)) })
+      validator.handleMessage(text, QUOTES, Proc.new { replyComposer.sendText(bot, chatId, stockWatcher.getQuote(text)) })
       validator.handleMessage(text, BOOBS, Proc.new { replyComposer.sendBoobs(bot, chatId) })
       validator.handleMessage(text, BUTTS, Proc.new { replyComposer.sendButts(bot, chatId) })
       validator.handleMessage(text, MANYAFILTER, Proc.new { replyComposer.replyManya(bot, message) }, true)
